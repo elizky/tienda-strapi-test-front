@@ -21,7 +21,7 @@
 }
 .precio {
     color: var(--primary);
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 900;
     margin: 0;
 }
