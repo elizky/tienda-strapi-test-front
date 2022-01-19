@@ -27,14 +27,13 @@ export async function getStaticPaths() {
     const url = `${process.env.API_URL}/blogs/`
     const resp = await fetch(url)
     const entradas = await resp.json()
-
     const paths = entradas.map(entrada => ({
         params: { url: entrada.url }
     }))
 
     return {
         paths,
-        fallback: true
+        fallback: false
     }
 }
 
