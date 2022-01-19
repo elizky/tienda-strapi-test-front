@@ -13,7 +13,7 @@ const Blog = ({ entradas }) => {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const url = `${process.env.API_URL}/blogs?_sort=created_at:desc`
     const resp = await fetch(url)
