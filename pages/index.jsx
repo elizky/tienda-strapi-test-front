@@ -6,9 +6,6 @@ import ListadoBlogs from '../components/ListadoBlogs'
 
 export default function Home({ guitarras, curso, blog }) {
 
-  console.log('guitarras, curso, blog', guitarras, curso, blog);
-  
-
   return (
     <Layout pagina={'index'} guitarra={guitarras[0]}>
       <main className="contenedor">
