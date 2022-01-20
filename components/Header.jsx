@@ -1,10 +1,18 @@
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import styles from '../styles/Header.module.css'
 
 const Header = ({ guitarra }) => {
     const router = useRouter()
+    // Selecting cart from global state
+    const cart = useSelector((state) => state.cart);
+
+    const getItemsCount = () => {
+        return cart.reduce((accumulator, item) => accumulator + item.quantity, 0)
+    }
+
 
     return (
         <header className={styles.header}>
@@ -20,6 +28,9 @@ const Header = ({ guitarra }) => {
                         <Link href={"/nosotros"}>Nosotros</Link>
                         <Link href={"/blog"}>Blog</Link>
                         <Link href={"/tienda"}>Tienda</Link>
+                        <Link href={"/cart"}>
+                            <p>Cart ({getItemsCount()})</p>
+                        </Link>
                     </nav>
                 </div>
                 {guitarra ? (
@@ -36,12 +47,9 @@ const Header = ({ guitarra }) => {
                 ) : null}
             </div>
             {router.pathname === '/' && (
-                // no se usa Image porque no soporta className
-                // <img className={styles.guitarra} src='/img/header_guitarra.png' alt='Imagen Header Guitarra'></img>
                 <div className={styles.guitarra}>
                     <Image layout='fixed' width={500} height={1200} src='/img/header_guitarra.png' alt='Imagen Header Guitarra'></Image>
                 </div>
-
             )}
         </header>
     )

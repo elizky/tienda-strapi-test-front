@@ -31,7 +31,7 @@
     }
 }
 
-.navegacion a {
+.navegacion > * {
     color: var(--blanco);
     text-decoration: none;
     font-size: 1.4rem;
@@ -39,8 +39,10 @@
     text-transform: uppercase;
     padding: 0.5rem;
     transition: all 0.3s;
+    margin: 0;
+    cursor: pointer;
 }
-.navegacion a:hover {
+.navegacion > *:hover {
     background-color: var(--primary);
 }
 
