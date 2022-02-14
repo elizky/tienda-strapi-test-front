@@ -1,0 +1,21 @@
+.compra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e994010a;
+    padding: 2rem;
+    margin: 5rem auto;
+}
+.cliente{
+    text-align: left;
+}
+.prod{
+    display: flex;
+    justify-content: space-between;
+    min-width: 40rem;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+.prod p{
+    margin: 1rem;
+}

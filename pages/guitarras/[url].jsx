@@ -7,8 +7,6 @@ import styles from '../../styles/Guitarra.module.css'
 const Guitarra = ({ guitarra }) => {
 
     const guitar = guitarra[0]
-
-    console.log('guitar', guitar);
     const { descripcion, imagen, precio, nombre } = guitar
     const dispatch = useDispatch()
 

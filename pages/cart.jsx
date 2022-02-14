@@ -41,7 +41,7 @@ const CartPage = () => {
         const resp = await fetch(url, { method: 'POST', body: JSON.stringify(pedido), headers: { 'Content-Type': 'application/json' } })
         const res = await resp.json()
         console.log('res', res);
-        alert(res)
+        alert(`Productos comprados`)
     }
 
     return (
